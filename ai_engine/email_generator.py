@@ -97,7 +97,7 @@ def generate_email(
 
     if client_data.get("company") == "AdScout":
         return {
-            "subject": "Nexora — предложение за разширяване на сътрудничеството ни",
+            "subject": "OveRide Signal — предложение за разширяване на сътрудничеството ни",
             "body": (
                 f"Здравейте {client_data['contact_name']},\n\n"
                 "Следим отблизо развитието на AdScout и с удоволствие видяхме, "

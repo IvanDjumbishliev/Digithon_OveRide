@@ -12,7 +12,7 @@ def send_alert(company_name, mrr, score, accept_url, decline_url, email_subject=
         f"📧 **Имейл:**\n"
         f"**Тема:** {email_subject}\n"
         f"```\n{email_body}\n```\n\n"
-        f"✅ [Approve & Send Email]({accept_url})　　❌ [Decline]({decline_url})"
+        + (f"\n✅ [Approve & Send Email]({accept_url})　　❌ [Decline]({decline_url})" if accept_url else "")
     )
 
     payload = {
