@@ -4,10 +4,14 @@ import UserTable from "./components/UserTable";
 import SignalChart from "./components/SignalChart";
 import AddUserModal from "./components/AddUserModal";
 import Toast from "./components/Toast";
+import ResultPage from "./components/ResultPage";
 import { useUsers } from "./hooks/useUsers";
 import "./App.css";
 
 export default function App() {
+  if (new URLSearchParams(window.location.search).get("status")) {
+    return <ResultPage />;
+  }
   const { users, addUser, removeUser } = useUsers();
   const [search, setSearch] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -18,8 +22,8 @@ export default function App() {
     setTimeout(() => setToast(null), 3000);
   };
 
-  const handleAddUser = (user) => {
-    addUser(user);
+  const handleAddUser = async (user) => {
+    await addUser(user);
     setShowModal(false);
     showToast(`${user.name} added to monitoring`);
   };

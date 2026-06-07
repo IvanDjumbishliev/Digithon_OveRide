@@ -1,6 +1,4 @@
-"""Full pipeline: processes all clients from linkedin_monitor/clients.py.
-
-Rewrites emails.json with fresh alerts and sends Discord notifications.
+"""Full pipeline — reads clients from clients.json, rewrites emails.json with fresh alerts.
 
 Usage:
     python run_pipeline.py
@@ -10,6 +8,7 @@ import asyncio
 import json
 import os
 import sys
+from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.path.insert(0, os.path.dirname(__file__))
@@ -17,22 +16,36 @@ sys.path.insert(0, os.path.dirname(__file__))
 from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), "ai_engine", ".env"))
 
-from pathlib import Path
-from linkedin_monitor.clients import CLIENTS
 from ai_engine.email_generator import process_client, EMAILS_FILE
+
+CLIENTS_FILE = Path(__file__).parent / "clients.json"
 
 
 async def main():
+    if not CLIENTS_FILE.exists():
+        print("clients.json not found. Add clients via the frontend first.")
+        return
+
+    clients = json.loads(CLIENTS_FILE.read_text(encoding="utf-8"))
+
+    if not clients:
+        print("No clients in clients.json. Add clients via the frontend first.")
+        return
+
     print("=" * 50)
-    print("  ChurnGuard Pipeline")
-    print(f"  Processing {len(CLIENTS)} clients...")
+    print(f"  ChurnGuard Pipeline — {len(clients)} clients")
     print("=" * 50)
 
-    # Clear emails.json before fresh run
+    # Fresh run — clear previous alerts
     EMAILS_FILE.write_text("[]", encoding="utf-8")
 
     results = []
-    for client in CLIENTS:
+    for client in clients:
+        signals = client.get("signals", [])
+        if not signals:
+            print(f"\n[{client['id']}] {client['name']} @ {client['company']} — no signals, skipping")
+            continue
+
         print(f"\n[{client['id']}] {client['name']} @ {client['company']}")
 
         client_data = {
@@ -46,7 +59,7 @@ async def main():
             "our_product": client["our_product"],
         }
 
-        result = await process_client(client_data, client["signals"])
+        result = await process_client(client_data, signals)
 
         if result:
             print(f"  Type: {result['type']} | Score: {result['score']}")
@@ -57,8 +70,7 @@ async def main():
             print(f"  Score below threshold, skipped.")
 
     print("\n" + "=" * 50)
-    print(f"  Done. {len(results)}/{len(CLIENTS)} alerts generated.")
-    print(f"  Check Discord for notifications.")
+    print(f"  Done. {len(results)}/{len(clients)} alerts generated.")
     print("=" * 50)
 
 

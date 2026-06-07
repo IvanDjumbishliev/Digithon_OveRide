@@ -1,12 +1,14 @@
 [
   {
-    "id": "alert_20260607_4b71a3",
-    "type": "unknown",
-    "score": 50,
+    "id": 1,
+    "name": "Тихомир Бахов",
     "company": "AdScout",
-    "contact_name": "Тихомир Бахов",
+    "linkedin": "https://www.linkedin.com/in/tihobanov/",
     "contact_email": "mdimitrov1239@gmail.com",
     "mrr": 2400,
+    "current_plan": "Pro",
+    "contract_end": "2026-12-01",
+    "our_product": "DataSync Pro",
     "signals": [
       {
         "type": "hiring",
@@ -23,21 +25,18 @@
         "severity": "highest",
         "detail": "Лъчезар Атанасов — дългогодишен служител на Google — се присъединява към екипа на AdScout. Силен сигнал за разширяване на американския пазар и enterprise амбиции."
       }
-    ],
-    "explanation": "Не можах да анализирам сигналите",
-    "draft_subject": "Следваща стъпка за AdScout",
-    "draft_body": "Здравей Тихомир Бахов, бих искал да обсъдим как можем да ви помогнем. Имате ли 20 минути тази седмица?",
-    "status": "pending",
-    "created_at": "2026-06-07T12:34:17.051879+00:00"
+    ]
   },
   {
-    "id": "alert_20260607_32299a",
-    "type": "unknown",
-    "score": 50,
+    "id": 2,
+    "name": "Миро Стоянов",
     "company": "AdScout",
-    "contact_name": "Миро Стоянов",
+    "linkedin": "https://www.linkedin.com/in/mirostoyanov/",
     "contact_email": "mdimitrov1239@gmail.com",
     "mrr": 1800,
+    "current_plan": "Basic",
+    "contract_end": "2026-10-15",
+    "our_product": "DataSync Pro",
     "signals": [
       {
         "type": "competitor_engagement",
@@ -54,21 +53,18 @@
         "severity": "highest",
         "detail": "Лъчезар Атанасов — дългогодишен служител на Google — се присъединява към екипа на AdScout. Силен сигнал за разширяване на американския пазар и enterprise амбиции."
       }
-    ],
-    "explanation": "Не можах да анализирам сигналите",
-    "draft_subject": "Следваща стъпка за AdScout",
-    "draft_body": "Здравей Миро Стоянов, бих искал да обсъдим как можем да ви помогнем. Имате ли 20 минути тази седмица?",
-    "status": "pending",
-    "created_at": "2026-06-07T12:34:31.588683+00:00"
+    ]
   },
   {
-    "id": "alert_20260607_28ad23",
-    "type": "unknown",
-    "score": 50,
+    "id": 3,
+    "name": "Веселин Троянов",
     "company": "AdScout",
-    "contact_name": "Веселин Троянов",
+    "linkedin": "https://www.linkedin.com/in/veselin-troyanov/",
     "contact_email": "mdimitrov1239@gmail.com",
     "mrr": 3200,
+    "current_plan": "Enterprise",
+    "contract_end": "2027-01-01",
+    "our_product": "DataSync Pro",
     "signals": [
       {
         "type": "growth",
@@ -85,11 +81,18 @@
         "severity": "highest",
         "detail": "Лъчезар Атанасов — дългогодишен служител на Google — се присъединява към екипа на AdScout. Силен сигнал за разширяване на американския пазар и enterprise амбиции."
       }
-    ],
-    "explanation": "Не можах да анализирам сигналите",
-    "draft_subject": "Следваща стъпка за AdScout",
-    "draft_body": "Здравей Веселин Троянов, бих искал да обсъдим как можем да ви помогнем. Имате ли 20 минути тази седмица?",
-    "status": "pending",
-    "created_at": "2026-06-07T12:34:45.816589+00:00"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "ccccccc",
+    "company": "ddd",
+    "linkedin": "linkedin.com/in/veselin-troyanov/?skipRedirect=true",
+    "contact_email": "mdimitrov1239@gmail.com",
+    "mrr": 0,
+    "current_plan": "Basic",
+    "contract_end": "2027-01-01",
+    "our_product": "DataSync Pro",
+    "signals": []
   }
 ]

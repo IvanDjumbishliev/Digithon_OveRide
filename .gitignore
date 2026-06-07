@@ -6,6 +6,20 @@ __pycache__/
 venv/
 .venv/
 *.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+pip-wheel-metadata/
+
+# Python build artifacts
+*.egg
+*.whl
+build/
+dist/
+site/
 
 # Local environmental variables (contains API keys, secrets)
 .env
@@ -19,6 +33,11 @@ node_modules/
 jspm_packages/
 web_modules/
 
+# JS package manager caches
+.npm/
+.pnpm-store/
+.yarn/
+
 # Debug logs
 npm-debug.log*
 yarn-debug.log*
@@ -26,8 +45,20 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Build outputs
-dist/
-build/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Runtime files
+*.log
+logs/
+tmp/
+temp/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
 
 # IDE
 .idea/
