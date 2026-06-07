@@ -37,12 +37,12 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header search={search} onSearch={setSearch} />
+      <Header search={search} onSearch={setSearch} users={users} />
 
       <main className="main">
         <div className="section-header">
           <div className="section-meta">
-            <span className="section-label">MONITORED ACCOUNTS</span>
+            <span className="section-label">Monitored Accounts</span>
             <span className="count-badge">{users.length}</span>
           </div>
           <button className="btn-add" onClick={() => setShowModal(true)}>
@@ -51,11 +51,7 @@ export default function App() {
           </button>
         </div>
 
-        <UserTable
-          users={filtered}
-          onRemove={handleRemoveUser}
-        />
-
+        <UserTable users={filtered} onRemove={handleRemoveUser} />
         <SignalChart users={users} />
       </main>
 

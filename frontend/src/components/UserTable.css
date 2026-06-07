@@ -1,8 +1,9 @@
 .table-wrap {
-  background: var(--bg-card);
+  background: var(--bg-white);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .user-table {
@@ -12,59 +13,59 @@
 
 .user-table thead tr {
   border-bottom: 1px solid var(--border);
+  background: var(--bg);
 }
 
 .user-table th {
-  padding: 14px 20px;
+  padding: 11px 20px;
   text-align: left;
-  font-family: 'Syne', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
   color: var(--text-muted);
-  white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .user-row {
   border-bottom: 1px solid var(--border);
-  transition: background 0.15s;
+  transition: background 0.12s;
 }
 
 .user-row:last-child { border-bottom: none; }
-
-.user-row:hover { background: rgba(255, 255, 255, 0.02); }
+.user-row:hover { background: var(--bg); }
 
 .user-table td {
-  padding: 16px 20px;
+  padding: 14px 20px;
   vertical-align: middle;
 }
 
 .user-cell {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 11px;
 }
 
 .avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: rgba(var(--av-color), 0.12);
-  border: 1px solid var(--av-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--av-bg, #e8e5df);
+  border: 2px solid var(--av-border, #d0ccc4);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Syne', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  color: var(--av-color);
+  color: var(--av-text, #6b6760);
   flex-shrink: 0;
+  letter-spacing: 0.02em;
 }
 
 .user-name {
   font-size: 14px;
   font-weight: 500;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .company-name {
@@ -75,51 +76,52 @@
 .li-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   color: #0a66c2;
   font-size: 12px;
   text-decoration: none;
   padding: 4px 10px;
-  background: rgba(10, 102, 194, 0.08);
-  border: 1px solid rgba(10, 102, 194, 0.2);
+  background: rgba(10, 102, 194, 0.06);
+  border: 1px solid rgba(10, 102, 194, 0.15);
   border-radius: 6px;
+  font-weight: 500;
   transition: all 0.15s;
 }
 
 .li-link:hover {
-  background: rgba(10, 102, 194, 0.15);
-  border-color: rgba(10, 102, 194, 0.4);
+  background: rgba(10, 102, 194, 0.12);
+  border-color: rgba(10, 102, 194, 0.3);
 }
 
 /* Signal badges */
 .signal-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 11px;
+  gap: 5px;
+  font-size: 12px;
   font-weight: 500;
   padding: 4px 10px;
-  border-radius: 20px;
+  border-radius: 6px;
   border: 1px solid;
   white-space: nowrap;
 }
 
 .signal-green {
   color: var(--green);
-  background: var(--green-dim);
-  border-color: rgba(0, 214, 143, 0.25);
+  background: var(--green-bg);
+  border-color: var(--green-border);
 }
 
 .signal-red {
   color: var(--red);
-  background: var(--red-dim);
-  border-color: rgba(255, 77, 109, 0.25);
+  background: var(--red-bg);
+  border-color: var(--red-border);
 }
 
 .signal-yellow {
-  color: var(--yellow);
-  background: var(--yellow-dim);
-  border-color: rgba(255, 209, 102, 0.25);
+  color: var(--amber);
+  background: var(--amber-bg);
+  border-color: var(--amber-border);
 }
 
 .scan-time {
@@ -131,11 +133,12 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--accent-glow);
-  border: 1px solid rgba(108, 99, 255, 0.25);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-mid);
   color: var(--accent);
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
@@ -144,8 +147,8 @@
 }
 
 .btn-draft:hover {
-  background: rgba(108, 99, 255, 0.2);
-  border-color: var(--accent);
+  background: rgba(45, 91, 227, 0.12);
+  border-color: rgba(45, 91, 227, 0.3);
 }
 
 .btn-remove {
@@ -164,17 +167,17 @@
 }
 
 .btn-remove:hover {
-  background: var(--red-dim);
-  border-color: rgba(255, 77, 109, 0.3);
+  background: var(--red-bg);
+  border-color: var(--red-border);
   color: var(--red);
 }
 
 .table-empty {
-  background: var(--bg-card);
-  border: 1px dashed var(--border-bright);
-  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  border: 1px dashed var(--border-mid);
+  border-radius: var(--radius-xl);
   padding: 60px;
   text-align: center;
   color: var(--text-muted);
-  font-size: 13px;
+  font-size: 14px;
 }
