@@ -3,13 +3,15 @@ import json
 
 WEBHOOK_URL = "https://discord.com/api/webhooks/1513125500476719166/IDq1Q9VrWx55avkaHXXDaZlb7Qp7Xj9LlHLpucN9TBOUZ58wW9ZLqt8K3Qh4rCjtEZ3u"
 
-def send_alert(company_name, mrr, score, accept_url, decline_url):
+def send_alert(company_name, mrr, score, accept_url, decline_url, email_subject="", email_body=""):
     """
     Sends a simple alert to Discord using Webhooks.
     """
     message = (
         f"🔴 **CHURN РИСК** — {company_name} | MRR: €{mrr} | Score: {score}/100\n\n"
-        f"hello master — what do you decide?\n\n"
+        f"📧 **Имейл:**\n"
+        f"**Тема:** {email_subject}\n"
+        f"```\n{email_body}\n```\n\n"
         f"✅ [Approve & Send Email]({accept_url})　　❌ [Decline]({decline_url})"
     )
 

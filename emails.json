@@ -1,0 +1,264 @@
+[
+  {
+    "id": "alert_20260607_7bd241",
+    "type": "upsell_opportunity",
+    "score": 85,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "ivan@abccorp.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Активното наемане на разработчици и разширяването на бизнеса с нов офис в Лондон показват силен растеж. Това създава възможност за надграждане към по-висок план.",
+    "draft_subject": "Развитието на ABC Corp",
+    "draft_body": "Здравейте, Иван,\n\nПоздравления за бързото развитие на ABC Corp и разширяването на екипа ви, включително новия офис в Лондон. В DataSync Pro искаме да сме сигурни, че нашите инструменти продължават да подкрепят растежа ви ефективно.\n\nС оглед на новите мащаби на работата ви, вярвам, че някои от разширените функционалности на нашите по-високи планове биха оптимизирали процесите ви значително. Ще бъде удоволствие да обсъдим как можем да адаптираме платформата към текущите ви нужди.\n\nСвободни ли сте за кратък 15-минутен разговор следващата седмица?",
+    "status": "pending",
+    "created_at": "2026-06-07T10:46:33.447371+00:00"
+  },
+  {
+    "id": "alert_20260607_a2e1da",
+    "type": "upsell_opportunity",
+    "score": 85,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "ivan@abccorp.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Активното наемане на разработчици и разширяването на бизнеса с нов офис в Лондон показват силен растеж. Това създава възможност за надграждане към по-висок план.",
+    "draft_subject": "Развитието на ABC Corp",
+    "draft_body": "Здравейте, Иван,\n\nПоздравления за бързото развитие на ABC Corp и разширяването на екипа ви, включително новия офис в Лондон. С нарастващия мащаб на операциите ви, вярвам, че по-мощните възможности на нашите висши планове биха оптимизирали значително работните ви процеси. Те са проектирани точно за компании в етап на растеж, за да осигурят по-голяма мащабируемост и автоматизация. Бих искал да обсъдим как можем да подкрепим новите ви цели за тази година. Свободни ли сте за кратък разговор следващата седмица?",
+    "status": "pending",
+    "created_at": "2026-06-07T10:47:24.838789+00:00"
+  },
+  {
+    "id": "alert_20260607_8839bf",
+    "type": "upsell_opportunity",
+    "score": 85,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "ivan@abccorp.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Активният наем на разработчици и разширяването на бизнеса с нов офис в Лондон показват силен растеж. Това създава възможност за надграждане към по-висок план.",
+    "draft_subject": "Развитието на ABC Corp",
+    "draft_body": "Здравейте, Иван,\n\nПоздравления за бързото развитие на ABC Corp и разширяването на екипа ви, както и за новия офис в Лондон. В такъв период на растеж е важно инфраструктурата ви да се мащабира ефективно, за да поддържа новите процеси. Вярвам, че преминаването към по-висок план на DataSync Pro ще ви осигури необходимата гъвкавост и оптимизация за новите екипи. Бих искал да обсъдим как можем да подкрепим този растеж с по-разширените ни възможности. Свободни ли сте за кратък разговор следващата седмица?",
+    "status": "pending",
+    "created_at": "2026-06-07T10:49:29.041654+00:00"
+  },
+  {
+    "id": "alert_20260607_27e444",
+    "type": "upsell_opportunity",
+    "score": 85,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "ivan@abccorp.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Активният наем на разработчици и разширяването на бизнеса с нов офис в Лондон показват силен растеж. Това създава възможност за надграждане към по-висок план за поддръжка на увеличената капацитет.",
+    "draft_subject": "Развитието на ABC Corp и DataSync Pro",
+    "draft_body": "Здравейте, Иван,\n\nПоздравления за бързото развитие на ABC Corp и разширяването на екипа ви, включително новия офис в Лондон. С нарастващия мащаб на операциите ви, е важно инфраструктурата за данни да остане стабилна и ефективна. Вярвам, че преминаването към по-висок план би подпомогнало новите ви капацитети и би оптимизирал работните процеси на разработчиците. Ще се радвам да обсъдим как можем да подкрепим този растеж с по-разширени възможности. Свободни ли сте за кратък разговор следващата седмица?",
+    "status": "pending",
+    "created_at": "2026-06-07T10:50:38.571952+00:00"
+  },
+  {
+    "id": "alert_20260607_544685",
+    "type": "unknown",
+    "score": 50,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "ivan@abccorp.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Не можах да анализирам сигналите",
+    "draft_subject": "Следваща стъпка за ABC Corp",
+    "draft_body": "Здравей Иван Петров, бих искал да обсъдим как можем да ви помогнем. Имате ли 20 минути тази седмица?",
+    "status": "pending",
+    "created_at": "2026-06-07T10:51:30.042205+00:00"
+  },
+  {
+    "id": "alert_20260607_69fc0e",
+    "type": "unknown",
+    "score": 50,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "ivan@abccorp.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Не можах да анализирам сигналите",
+    "draft_subject": "Следваща стъпка за ABC Corp",
+    "draft_body": "Здравей Иван Петров, бих искал да обсъдим как можем да ви помогнем. Имате ли 20 минути тази седмица?",
+    "status": "pending",
+    "created_at": "2026-06-07T10:52:28.879494+00:00"
+  },
+  {
+    "id": "alert_20260607_053aa8",
+    "type": "unknown",
+    "score": 50,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "mdimitrov1239@gmail.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Не можах да анализирам сигналите",
+    "draft_subject": "Следваща стъпка за ABC Corp",
+    "draft_body": "Здравей Иван Петров, бих искал да обсъдим как можем да ви помогнем. Имате ли 20 минути тази седмица?",
+    "status": "pending",
+    "created_at": "2026-06-07T11:01:12.423506+00:00"
+  },
+  {
+    "id": "alert_20260607_701753",
+    "type": "unknown",
+    "score": 50,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "mdimitrov1239@gmail.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Не можах да анализирам сигналите",
+    "draft_subject": "Следваща стъпка за ABC Corp",
+    "draft_body": "Здравей Иван Петров, бих искал да обсъдим как можем да ви помогнем. Имате ли 20 минути тази седмица?",
+    "status": "failed",
+    "created_at": "2026-06-07T11:06:18.843051+00:00",
+    "fail_reason": "'charmap' codec can't encode character '\\u2705' in position 0: character maps to <undefined>"
+  },
+  {
+    "id": "alert_20260607_13178a",
+    "type": "unknown",
+    "score": 50,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "mdimitrov1239@gmail.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Не можах да анализирам сигналите",
+    "draft_subject": "Следваща стъпка за ABC Corp",
+    "draft_body": "Здравей Иван Петров, бих искал да обсъдим как можем да ви помогнем. Имате ли 20 минути тази седмица?",
+    "status": "sent",
+    "created_at": "2026-06-07T11:12:34.293349+00:00"
+  },
+  {
+    "id": "alert_20260607_0fa705",
+    "type": "unknown",
+    "score": 50,
+    "company": "ABC Corp",
+    "contact_name": "Иван Петров",
+    "contact_email": "mdimitrov1239@gmail.com",
+    "mrr": 2000,
+    "signals": [
+      {
+        "type": "hiring",
+        "severity": "medium",
+        "detail": "5 job posts за developers тази седмица"
+      },
+      {
+        "type": "growth",
+        "severity": "medium",
+        "detail": "Пост за нов офис в Лондон"
+      }
+    ],
+    "explanation": "Не можах да анализирам сигналите",
+    "draft_subject": "Следваща стъпка за ABC Corp",
+    "draft_body": "Здравей Иван Петров, бих искал да обсъдим как можем да ви помогнем. Имате ли 20 минути тази седмица?",
+    "status": "failed",
+    "created_at": "2026-06-07T11:16:28.032260+00:00",
+    "fail_reason": "declined"
+  }
+]

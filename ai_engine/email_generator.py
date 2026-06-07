@@ -7,15 +7,32 @@ import re
 import time
 import uuid
 from datetime import datetime, timezone
+from pathlib import Path
 
 import requests
 
 from ai_engine.analyzer import analyze_signals, should_alert, _call_llm, _extract_json
 from ai_engine.prompts import EMAIL_PROMPT
+from email_sender.webhook_alert import send_alert as send_discord_alert
 
 logger = logging.getLogger(__name__)
 
 _FORBIDDEN_WORDS = ["linkedin", "профил", "постове"]
+
+EMAILS_FILE = Path(__file__).parent.parent / "emails.json"
+
+
+def save_alert(alert: dict) -> None:
+    """Append an alert to emails.json."""
+    alerts = []
+    if EMAILS_FILE.exists():
+        try:
+            alerts = json.loads(EMAILS_FILE.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, ValueError):
+            alerts = []
+    alerts.append(alert)
+    EMAILS_FILE.write_text(json.dumps(alerts, ensure_ascii=False, indent=2), encoding="utf-8")
+    logger.info("Alert %s saved to %s", alert["id"], EMAILS_FILE)
 
 
 def _contains_forbidden(body: str) -> bool:
@@ -176,6 +193,20 @@ async def process_client(
 
     email = generate_email(client_data, signals, analysis)
     alert = build_alert(client_data, signals, analysis, email)
+    save_alert(alert)
+
+    try:
+        send_discord_alert(
+            company_name=client_data["company"],
+            mrr=client_data["mrr"],
+            score=analysis["score"],
+            accept_url=f"http://localhost:5000/approve/{alert['id']}",
+            decline_url=f"http://localhost:5000/decline/{alert['id']}",
+            email_subject=email["subject"],
+            email_body=email["body"],
+        )
+    except Exception as e:
+        logger.error("Discord notification failed: %s", e)
 
     logger.info("Alert created: %s (score: %d)", alert["id"], alert["score"])
     return alert

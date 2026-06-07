@@ -17,7 +17,7 @@ from ai_engine.email_generator import process_client
 test_client = {
     "company": "ABC Corp",
     "contact_name": "Иван Петров",
-    "contact_email": "ivan@abccorp.com",
+    "contact_email": "mdimitrov1239@gmail.com",
     "linkedin_url": "https://linkedin.com/in/ivan-petrov",
     "current_plan": "Basic",
     "mrr": 2000,
