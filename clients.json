@@ -8,7 +8,7 @@
     "mrr": 2400,
     "current_plan": "Pro",
     "contract_end": "2026-12-01",
-    "our_product": "DataSync Pro",
+    "our_product": "Nexora",
     "signals": [
       {
         "type": "hiring",
@@ -36,7 +36,7 @@
     "mrr": 1800,
     "current_plan": "Basic",
     "contract_end": "2026-10-15",
-    "our_product": "DataSync Pro",
+    "our_product": "Nexora",
     "signals": [
       {
         "type": "competitor_engagement",
@@ -64,7 +64,7 @@
     "mrr": 3200,
     "current_plan": "Enterprise",
     "contract_end": "2027-01-01",
-    "our_product": "DataSync Pro",
+    "our_product": "Nexora",
     "signals": [
       {
         "type": "growth",
@@ -82,17 +82,5 @@
         "detail": "Лъчезар Атанасов — дългогодишен служител на Google — се присъединява към екипа на AdScout. Силен сигнал за разширяване на американския пазар и enterprise амбиции."
       }
     ]
-  },
-  {
-    "id": 4,
-    "name": "ccccccc",
-    "company": "ddd",
-    "linkedin": "linkedin.com/in/veselin-troyanov/?skipRedirect=true",
-    "contact_email": "mdimitrov1239@gmail.com",
-    "mrr": 0,
-    "current_plan": "Basic",
-    "contract_end": "2027-01-01",
-    "our_product": "DataSync Pro",
-    "signals": []
   }
 ]

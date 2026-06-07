@@ -21,7 +21,7 @@ export default function SignalChart({ users }) {
     <div className="chart-card">
       <div className="chart-header">
         <div>
-          <h3 className="chart-title">Signal Trends</h3>
+          <h3 className="chart-title">OveRide Signal Trends</h3>
           <p className="chart-subtitle">8-week rolling · LinkedIn activity analysis</p>
         </div>
         <div className="chart-legend">

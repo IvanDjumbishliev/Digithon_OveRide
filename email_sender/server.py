@@ -1,6 +1,8 @@
 import json
 import os
+import re
 import smtplib
+import subprocess
 import sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -85,7 +87,7 @@ def api_add_user():
         "mrr": 0,
         "current_plan": "Basic",
         "contract_end": "2027-01-01",
-        "our_product": "DataSync Pro",
+        "our_product": "OveRide Signal",
         "signals": [],
     }
     clients.append(new_client)
@@ -160,6 +162,29 @@ def decline(alert_id):
         email_body="❌ DECLINED — email was NOT sent.",
     )
     return redirect(f"{FRONTEND_URL}?{urlencode({'status': 'declined', 'company': alert['company'], 'contact': alert['contact_name'], 'subject': alert['draft_subject'], 'score': alert['score']})}")
+
+
+@app.route("/api/run-pipeline", methods=["POST"])
+def api_run_pipeline():
+    try:
+        pipeline_path = str(Path(__file__).parent.parent / "run_pipeline.py")
+        result = subprocess.run(
+            [sys.executable, pipeline_path],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            timeout=120,
+            cwd=str(Path(__file__).parent.parent),
+        )
+        output = result.stdout + result.stderr
+        m = re.search(r"(\d+)/(\d+) alerts generated", output)
+        alerts = int(m.group(1)) if m else 0
+        clients = int(m.group(2)) if m else 0
+        return jsonify({"ok": True, "alerts": alerts, "clients": clients})
+    except subprocess.TimeoutExpired:
+        return jsonify({"ok": False, "error": "Pipeline timed out"}), 504
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)}), 500
 
 
 if __name__ == "__main__":

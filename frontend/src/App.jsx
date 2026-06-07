@@ -16,6 +16,7 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [toast, setToast] = useState(null);
+  const [syncing, setSyncing] = useState(false);
 
   const showToast = (message, type = "success") => {
     setToast({ message, type });
@@ -31,6 +32,23 @@ export default function App() {
   const handleRemoveUser = (id, name) => {
     removeUser(id);
     showToast(`${name} removed`, "warning");
+  };
+
+  const handleSync = async () => {
+    setSyncing(true);
+    try {
+      const resp = await fetch("http://localhost:5000/api/run-pipeline", { method: "POST" });
+      const data = await resp.json();
+      if (data.ok) {
+        showToast(`Sync complete — ${data.alerts} alert(s) sent to Discord`);
+      } else {
+        showToast(data.error || "Sync failed", "warning");
+      }
+    } catch {
+      showToast("Cannot reach server on :5000", "warning");
+    } finally {
+      setSyncing(false);
+    }
   };
 
   const filtered = users.filter(
@@ -49,10 +67,15 @@ export default function App() {
             <span className="section-label">Monitored Accounts</span>
             <span className="count-badge">{users.length}</span>
           </div>
-          <button className="btn-add" onClick={() => setShowModal(true)}>
-            <span className="btn-icon">+</span>
-            Add / Remove User
-          </button>
+          <div className="section-actions">
+            <button className="btn-sync" onClick={handleSync} disabled={syncing}>
+              {syncing ? <><span className="spin">⟳</span> Syncing…</> : "⟳ Sync"}
+            </button>
+            <button className="btn-add" onClick={() => setShowModal(true)}>
+              <span className="btn-icon">+</span>
+              Add / Remove User
+            </button>
+          </div>
         </div>
 
         <UserTable users={filtered} onRemove={handleRemoveUser} />

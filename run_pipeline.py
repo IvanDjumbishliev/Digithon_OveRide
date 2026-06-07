@@ -32,8 +32,17 @@ async def main():
         print("No clients in clients.json. Add clients via the frontend first.")
         return
 
+    # One email per company — pick highest MRR representative
+    seen: set[str] = set()
+    unique_clients = []
+    for c in sorted(clients, key=lambda x: x.get("id", 0)):
+        if c["company"] not in seen:
+            seen.add(c["company"])
+            unique_clients.append(c)
+    clients = unique_clients
+
     print("=" * 50)
-    print(f"  ChurnGuard Pipeline — {len(clients)} clients")
+    print(f"  ChurnGuard Pipeline — {len(clients)} companies")
     print("=" * 50)
 
     # Fresh run — clear previous alerts

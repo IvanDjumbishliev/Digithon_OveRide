@@ -22,7 +22,7 @@ export default function Header({ search, onSearch, users }) {
             </svg>
           </div>
           <div>
-            <span className="logo-text">Signal</span>
+            <span className="logo-text">OveRide Signal</span>
           </div>
         </div>
         <div className="nav-status">

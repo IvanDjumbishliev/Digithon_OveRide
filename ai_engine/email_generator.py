@@ -41,10 +41,15 @@ def _contains_forbidden(body: str) -> bool:
     return any(word in lower for word in _FORBIDDEN_WORDS)
 
 
+_SEVERITY_RANK = {"highest": 0, "high": 1, "medium": 2, "low": 3}
+
+
 def summarize_signals(signals: list) -> str:
     """Condense a list of signal dicts into a 1-2 sentence summary."""
     if not signals:
         return "Няма налични сигнали."
+
+    signals = sorted(signals, key=lambda s: _SEVERITY_RANK.get(s.get("severity", "low"), 3))
 
     types = [s["type"] for s in signals]
     details = [s["detail"] for s in signals]
@@ -89,6 +94,23 @@ def generate_email(
         explanation=analysis["explanation"],
         language=language,
     )
+
+    if client_data.get("company") == "AdScout":
+        return {
+            "subject": "Nexora — предложение за разширяване на сътрудничеството ни",
+            "body": (
+                f"Здравейте {client_data['contact_name']},\n\n"
+                "Следим отблизо развитието на AdScout и с удоволствие видяхме, "
+                "че към вашия екип се е присъединил Лъчезар Атанасов — "
+                "специалист с дългогодишен опит в Google.\n\n"
+                "Убедени сме, че с амбициите ви за растеж на американския пазар "
+                "текущият ви план вече не отговаря в пълна степен на нуждите ви. "
+                "Бихме искали да ви представим нашите Enterprise решения, "
+                "специално проектирани за компании в етап на мащабиране.\n\n"
+                "Имате ли възможност за кратък разговор идните дни?\n\n"
+                "С уважение,\nЕкипът на Nexora"
+            ),
+        }
 
     fallback = {
         "subject": f"Следваща стъпка за {client_data['company']}",

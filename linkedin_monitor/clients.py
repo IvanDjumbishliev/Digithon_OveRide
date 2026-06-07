@@ -10,7 +10,7 @@ CLIENTS = [
         "mrr": 2400,
         "current_plan": "Pro",
         "contract_end": "2026-12-01",
-        "our_product": "DataSync Pro",
+        "our_product": "Nexora",
         "signals": [
             {
                 "type": "hiring",
@@ -33,7 +33,7 @@ CLIENTS = [
         "mrr": 1800,
         "current_plan": "Basic",
         "contract_end": "2026-10-15",
-        "our_product": "DataSync Pro",
+        "our_product": "Nexora",
         "signals": [
             {
                 "type": "competitor_engagement",
@@ -56,7 +56,7 @@ CLIENTS = [
         "mrr": 3200,
         "current_plan": "Enterprise",
         "contract_end": "2027-01-01",
-        "our_product": "DataSync Pro",
+        "our_product": "Nexora",
         "signals": [
             {
                 "type": "growth",
