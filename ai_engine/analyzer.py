@@ -13,7 +13,7 @@ from ai_engine.prompts import ANALYSIS_PROMPT
 logger = logging.getLogger(__name__)
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-MODEL = "google/gemma-3-4b-it:free"
+MODEL = "google/gemma-4-31b-it:free"
 
 _DEFAULT_RESULT = {
     "type": "unknown",

@@ -30,6 +30,7 @@ class LinkedInScraper:
         
         signals_for_ai = []
         clean_name = None
+        company_name = None
 
         if profile_url:
             try:
@@ -71,82 +72,18 @@ class LinkedInScraper:
             # База данни от напълно готови и логически обвързани профили
             profile_pool = [
                 {
-                    "name": "Тихомир Бахов",
-                    "company": "Digithon Mentor Corp",
+                    "name": "Александър Петров",
+                    "company": "Appolica",
                     "signals": [
                         {
                             "type": "hiring",
                             "severity": "high",
-                            "detail": "Публикува пост: 'Страхотен старт на Digithon 2026 в София! Търсим ИИ инженери за новите ни B2B SaaS проекти.'"
+                            "detail": "Публикува пост: 'Appolica расте! Търсим iOS и Android разработчици за нови мобилни проекти с международни клиенти.'"
                         },
                         {
                             "type": "growth",
                             "severity": "high",
-                            "detail": "Сподели статия за автоматизацията: 'Автоматизацията на Account Management процесите през AI агенти и LLM модели е бъдещето на SaaS индустрията.'"
-                        }
-                    ]
-                },
-                {
-                    "name": "Илон Мъск",
-                    "company": "Tesla",
-                    "signals": [
-                        {
-                            "type": "hiring",
-                            "severity": "high",
-                            "detail": "Публикува пост: 'Разширяваме екипа за автономно шофиране и AI агенти в Европа! Търсим Senior Engineers.'"
-                        },
-                        {
-                            "type": "growth",
-                            "severity": "high",
-                            "detail": "Сподели: 'Новата ни Gigafactory достигна рекордни нива на производство благодарение на умна автоматизация.'"
-                        }
-                    ]
-                },
-                {
-                    "name": "Сам Алтман",
-                    "company": "OpenAI",
-                    "signals": [
-                        {
-                            "type": "growth",
-                            "severity": "high",
-                            "detail": "Публикува пост: 'Стартираме мащабна интеграция на мултимодални агенти в enterprise сектора. Мащабираме бързо!'"
-                        },
-                        {
-                            "type": "hiring",
-                            "severity": "medium",
-                            "detail": "Сподели: 'Търсим продуктови мениджъри, които да водят следващото поколение B2B API интеграции.'"
-                        }
-                    ]
-                },
-                {
-                    "name": "Димитър Георгиев",
-                    "company": "Stripe Bulgaria",
-                    "signals": [
-                        {
-                            "type": "competitor_engagement",
-                            "severity": "high",
-                            "detail": "Хареса пост на конкурентна разплащателна платформа относно по-ниски такси за SaaS партньори."
-                        },
-                        {
-                            "type": "silence",
-                            "severity": "medium",
-                            "detail": "Липса на активност и споменавания на нашия продукт в последните 45 дни от страна на техния мениджмънт."
-                        }
-                    ]
-                },
-                {
-                    "name": "Елена Петрова",
-                    "company": "UiPath Romania",
-                    "signals": [
-                        {
-                            "type": "job_change",
-                            "severity": "highest",
-                            "detail": "Промяна в профила: Основното ни лице за контакт преминава на нова позиция в друга компания следващия месец."
-                        },
-                        {
-                            "type": "competitor_engagement",
-                            "severity": "high",
-                            "detail": "Публикува коментар под презентация на конкурентен AI Agent инструмент: 'Изглежда доста обещаващо като архитектура!'"
+                            "detail": "Сподели: 'Стартираме партньорство с нов enterprise клиент от Западна Европа. Разширяваме екипа в Sofia Tech Park.'"
                         }
                     ]
                 }
@@ -155,6 +92,7 @@ class LinkedInScraper:
             # Избираме един изцяло готов профил на случаен принцип
             chosen_profile = random.choice(profile_pool)
             clean_name = chosen_profile["name"]
+            company_name = chosen_profile["company"]
             signals_for_ai = chosen_profile["signals"]
             
             print(f"[Backend Scraper] Successfully matched profile '{clean_name}' with company context '{chosen_profile['company']}'")
@@ -162,9 +100,10 @@ class LinkedInScraper:
         return {
             "status": "success",
             "person_name": clean_name,
+            "company": company_name or (clean_name + " Corp"),
             "linkedin_url": profile_url if profile_url else "https://bg.linkedin.com/in/simulated-profile",
             "recent_posts": [s["detail"] for s in signals_for_ai],
-            "signals": signals_for_ai                             
+            "signals": signals_for_ai
         }
 
 if __name__ == "__main__":

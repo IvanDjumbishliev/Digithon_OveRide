@@ -1,42 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const SEED_USERS = [
-  {
-    id: 1,
-    name: "Maria Ivanova",
-    company: "TechFlow BG",
-    linkedin: "linkedin.com/in/mariaivanova",
-    signal: "upsell",
-    lastScan: "2 min ago",
-  },
-  {
-    id: 2,
-    name: "Georgi Petrov",
-    company: "SoftServe Ltd",
-    linkedin: "linkedin.com/in/gpetrov",
-    signal: "churn",
-    lastScan: "14 min ago",
-  },
-  {
-    id: 3,
-    name: "Elena Todorova",
-    company: "Bright Systems",
-    linkedin: "linkedin.com/in/elenatodorova",
-    signal: "neutral",
-    lastScan: "1 hr ago",
-  },
-  {
-    id: 4,
-    name: "Dimitar Kolev",
-    company: "DataWave EOOD",
-    linkedin: "linkedin.com/in/dkolev",
-    signal: "upsell",
-    lastScan: "3 hr ago",
-  },
-];
+const API_URL = "http://localhost:5000/api/users";
 
 export function useUsers() {
-  const [users, setUsers] = useState(SEED_USERS);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((r) => r.json())
+      .then((data) => setUsers(data))
+      .catch(() => setUsers([]));
+  }, []);
 
   const addUser = (user) => {
     setUsers((prev) => [user, ...prev]);

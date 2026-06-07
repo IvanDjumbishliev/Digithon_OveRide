@@ -7,15 +7,30 @@ from email.mime.multipart import MIMEMultipart
 sys.stdout.reconfigure(encoding="utf-8")
 
 from dotenv import load_dotenv
-from flask import Flask
+from flask import Flask, jsonify
+from flask_cors import CORS
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", "ai_engine", ".env"))
 
 from emails_store import get_pending_emails, mark_as_sent, mark_as_failed
 from email_sender.webhook_alert import send_alert as send_discord_alert
+from linkedin_monitor.clients import CLIENTS
 
 app = Flask(__name__)
+CORS(app)
+
+_CHURN_TYPES = {"competitor_engagement", "silence", "job_change"}
+_UPSELL_TYPES = {"hiring", "growth"}
+
+
+def _signal_for_client(client: dict) -> str:
+    types = {s["type"] for s in client.get("signals", [])}
+    if types & _CHURN_TYPES:
+        return "churn"
+    if types & _UPSELL_TYPES:
+        return "upsell"
+    return "neutral"
 
 GMAIL_USER = os.environ.get("GMAIL_USER", "")
 GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
@@ -31,6 +46,22 @@ def _send_email(to_addr: str, subject: str, body: str) -> None:
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
         server.sendmail(GMAIL_USER, to_addr, msg.as_string())
+
+
+@app.route("/api/users")
+def api_users():
+    users = [
+        {
+            "id": c["id"],
+            "name": c["name"],
+            "company": c["company"],
+            "linkedin": c["linkedin"],
+            "signal": _signal_for_client(c),
+            "lastScan": "just now",
+        }
+        for c in CLIENTS
+    ]
+    return jsonify(users)
 
 
 @app.route("/approve/<alert_id>")

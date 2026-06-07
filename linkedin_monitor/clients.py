@@ -1,0 +1,73 @@
+"""Monitored clients list — each entry maps to a LinkedIn profile."""
+
+CLIENTS = [
+    {
+        "id": 1,
+        "name": "Тихомир Бахов",
+        "company": "AdScout",
+        "linkedin": "https://www.linkedin.com/in/tihobanov/",
+        "contact_email": "mdimitrov1239@gmail.com",
+        "mrr": 2400,
+        "current_plan": "Pro",
+        "contract_end": "2026-12-01",
+        "our_product": "DataSync Pro",
+        "signals": [
+            {
+                "type": "hiring",
+                "severity": "high",
+                "detail": "Публикува пост: 'AdScout търси Senior Engineers за разширяване на продукта ни в Европа.'"
+            },
+            {
+                "type": "growth",
+                "severity": "high",
+                "detail": "Сподели: 'Достигнахме 1000 активни рекламодатели на платформата. Следващата цел — 5000!'"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Миро Стоянов",
+        "company": "AdScout",
+        "linkedin": "https://www.linkedin.com/in/mirostoyanov/",
+        "contact_email": "mdimitrov1239@gmail.com",
+        "mrr": 1800,
+        "current_plan": "Basic",
+        "contract_end": "2026-10-15",
+        "our_product": "DataSync Pro",
+        "signals": [
+            {
+                "type": "competitor_engagement",
+                "severity": "high",
+                "detail": "Хареса пост на конкурентна ad intelligence платформа за нови AI функционалности."
+            },
+            {
+                "type": "silence",
+                "severity": "medium",
+                "detail": "Липса на активност и споменавания на нашия продукт в последните 30 дни."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Веселин Троянов",
+        "company": "AdScout",
+        "linkedin": "https://www.linkedin.com/in/veselin-troyanov/",
+        "contact_email": "mdimitrov1239@gmail.com",
+        "mrr": 3200,
+        "current_plan": "Enterprise",
+        "contract_end": "2027-01-01",
+        "our_product": "DataSync Pro",
+        "signals": [
+            {
+                "type": "growth",
+                "severity": "high",
+                "detail": "Публикува пост: 'AdScout интегрира нови пазари — Германия и Франция вече са налични!'"
+            },
+            {
+                "type": "hiring",
+                "severity": "medium",
+                "detail": "Сподели: 'Търсим Product Manager и Data Analysts за Sofia офиса ни.'"
+            }
+        ]
+    }
+]
