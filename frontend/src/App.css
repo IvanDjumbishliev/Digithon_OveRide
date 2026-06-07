@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #f7f6f3;
+  --bg-white: #ffffff;
+  --bg-card: #ffffff;
+  --bg-subtle: #f0eeea;
+  --border: #e8e5df;
+  --border-mid: #d8d4cc;
+  --text-primary: #1a1916;
+  --text-secondary: #6b6760;
+  --text-muted: #a8a49e;
+  --accent: #2d5be3;
+  --accent-soft: rgba(45, 91, 227, 0.08);
+  --accent-mid: rgba(45, 91, 227, 0.15);
+  --green: #1a7a4a;
+  --green-bg: #edf7f2;
+  --green-border: #b6e3cc;
+  --red: #c0392b;
+  --red-bg: #fdf2f1;
+  --red-border: #f0c4be;
+  --amber: #92600a;
+  --amber-bg: #fef8ee;
+  --amber-border: #f0dca0;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Geist', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding: 0 32px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.count-badge {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-mid);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--text-primary);
+  color: #fff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  letter-spacing: -0.01em;
+}
+
+.btn-add:hover {
+  background: #2d2b27;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-icon {
+  font-size: 17px;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 4px; }
